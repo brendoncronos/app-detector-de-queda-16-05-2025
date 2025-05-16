@@ -1,1 +1,0 @@
-# app-queda-com-giroscopio-16-05-2025
