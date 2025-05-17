@@ -61,9 +61,9 @@ export default function App() {
   function getLocationAndLatitudeText(
     location: Location.LocationObject | null
   ) {
-    if (!location) return "";
+    if (location == null) return "";
     const { latitude, longitude } = location.coords;
-    return `Latitude: ${latitude}, Longitude: ${longitude}`;
+    return `Latitude: ${latitude}\nLongitude: ${longitude}`;
   }
 
   useEffect(() => {
@@ -91,7 +91,9 @@ export default function App() {
         )}
       </Text>
       <Text style={styles.text}>
-        {errorMessage ? errorMessage : getLocationAndLatitudeText(location)}
+        {errorMessage ? errorMessage : 
+          <> {getLocationAndLatitudeText(location)} </>
+          }
       </Text>
     </View>
   );
